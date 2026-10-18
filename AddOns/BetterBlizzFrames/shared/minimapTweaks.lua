@@ -61,7 +61,6 @@ end
 
 local function KeepTitleHidden(self)
     if TitleHideActive() then
-        self.bbfTitleWasShown = true
         self:Hide()
     end
 end
@@ -76,33 +75,13 @@ function BBF.UpdateMinimapTitle()
         table.insert(frames, BBF.classicMinimapHeader)
     else
         table.insert(frames, MinimapCluster.BorderTop)
-        table.insert(frames, MinimapCluster.Tracking)
-        table.insert(frames, GameTimeFrame)
-        table.insert(frames, TimeManagerClockButton)
-        if not TimeManagerClockButton and not BBF.minimapTitleClockWait then
-            BBF.minimapTitleClockWait = true
-            EventUtil.ContinueOnAddOnLoaded("Blizzard_TimeManager", function()
-                if TitleHideActive() and not BetterBlizzFramesDB.classicMinimap then
-                    titleHidden = false
-                    BBF.UpdateMinimapTitle()
-                end
-            end)
-        end
     end
     for _, frame in pairs(frames) do
-        if hide then
-            if not frame.bbfTitleHook and frame.HookScript then
-                frame.bbfTitleHook = true
-                frame:HookScript("OnShow", KeepTitleHidden)
-            end
-            if frame:IsShown() then
-                frame.bbfTitleWasShown = true
-            end
-            frame:Hide()
-        elseif frame.bbfTitleWasShown then
-            frame.bbfTitleWasShown = nil
-            frame:Show()
+        if hide and not frame.bbfTitleHook and frame.HookScript then
+            frame.bbfTitleHook = true
+            frame:HookScript("OnShow", KeepTitleHidden)
         end
+        frame:SetShown(not hide)
     end
 end
 

@@ -120,21 +120,9 @@ function BBF.ClassicMinimap()
     header:SetTexCoord(0.3125, 1, 0, 0.109375)
     BBF.classicMinimapHeader = header
 
-    local function HideButtonArt(button)
-        if button.StateTexture then button.StateTexture:SetParent(BBF.hiddenFrame) end
-        if button.AddTexture then button.AddTexture:SetParent(BBF.hiddenFrame) end
-    end
-
     local zoneButton = MinimapCluster.ZoneTextButton
     zoneButton:SetParent(title)
     zoneButton:SetFrameLevel(skin:GetFrameLevel() + 3)
-    HideButtonArt(zoneButton)
-    MinimapZoneText:SetFontObject(GameFontNormal)
-    if MinimapCluster.UpdateMinimapConfig then
-        hooksecurefunc(MinimapCluster, "UpdateMinimapConfig", function()
-            zoneButton:SetFrameLevel(skin:GetFrameLevel() + 3)
-        end)
-    end
     zoneButton:ClearAllPoints()
     zoneButton:SetSize(156, 12)
     zoneButton:SetPoint("LEFT", header, "LEFT", 10, 0)
@@ -188,7 +176,6 @@ function BBF.ClassicMinimap()
         trackingIcon:SetPoint("TOPLEFT", tracking, "TOPLEFT", 6, -6)
 
         local button = tracking.Button
-        HideButtonArt(button)
         button:ClearAllPoints()
         button:SetSize(32, 32)
         button:SetPoint("TOPLEFT", tracking, "TOPLEFT")
@@ -203,13 +190,10 @@ function BBF.ClassicMinimap()
     indicators:SetParent(skin)
     local mail = indicators.MailFrame
     local craftingOrder = indicators.CraftingOrderFrame
-    local indicatorList = {
+    for _, indicator in ipairs({
         { mail, mail:CreateTexture(nil, "ARTWORK"), "Interface\\Icons\\INV_Letter_15", "TOPRIGHT", 94, 33 },
-    }
-    if craftingOrder and MiniMapCraftingOrderIcon then
-        table.insert(indicatorList, { craftingOrder, MiniMapCraftingOrderIcon, "Interface\\Icons\\INV_Hammer_12", "CENTER", -67, -39 })
-    end
-    for _, indicator in ipairs(indicatorList) do
+        { craftingOrder, MiniMapCraftingOrderIcon, "Interface\\Icons\\INV_Hammer_12", "CENTER", -67, -39 },
+    }) do
         local frame, icon = indicator[1], indicator[2]
         frame.ignoreInLayout = true
         frame:ClearAllPoints()
@@ -223,40 +207,38 @@ function BBF.ClassicMinimap()
         AddTexture(frame, "OVERLAY", 0, TRACKING_BORDER, 52, 52, "TOPLEFT")
     end
     MiniMapMailIcon:SetAlpha(0)
-    if mail.NewMailFlipbook then mail.NewMailFlipbook:SetTexture(nil) end
-    if mail.MailReminderFlipbook then mail.MailReminderFlipbook:SetTexture(nil) end
+    mail.NewMailFlipbook:SetTexture(nil)
+    mail.MailReminderFlipbook:SetTexture(nil)
     indicators:Layout()
 
     local difficulty = MinimapCluster.InstanceDifficulty
-    if difficulty then
-        difficulty:SetParent(title)
-        difficulty:SetFrameLevel(skin:GetFrameLevel() + 10)
-        local function PlaceDifficulty()
-            difficulty:ClearAllPoints()
-            difficulty:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 10, 5)
-            difficulty:SetFlipped(false)
-        end
-        hooksecurefunc(MinimapCluster, "SetHeaderUnderneath", PlaceDifficulty)
-        PlaceDifficulty()
-
-        for _, text in ipairs({ difficulty.Default.Text, difficulty.Guild.Instance.Text }) do
-            local font, size = text:GetFont()
-            text:SetFont(font, size, "OUTLINE")
-        end
-        function BBF.UpdateClassicMinimapDifficulty()
-            local r, g, b = 0.588, 0.588, 0.6
-            if BBF.MinimapBronzeTintActive and BBF.MinimapBronzeTintActive() then
-                r, g, b = 0.573, 0.435, 0.216
-            end
-            for _, mode in ipairs({ difficulty.Default, difficulty.ChallengeMode }) do
-                mode.Border:SetDesaturated(true)
-                mode.Border:SetVertexColor(r, g, b, 1)
-                mode.Background:SetVertexColor(0, 0, 0, 0.5)
-            end
-        end
-        hooksecurefunc(difficulty, "SetFlipped", BBF.UpdateClassicMinimapDifficulty)
-        BBF.UpdateClassicMinimapDifficulty()
+    difficulty:SetParent(title)
+    difficulty:SetFrameLevel(skin:GetFrameLevel() + 10)
+    local function PlaceDifficulty()
+        difficulty:ClearAllPoints()
+        difficulty:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 10, 5)
+        difficulty:SetFlipped(false)
     end
+    hooksecurefunc(MinimapCluster, "SetHeaderUnderneath", PlaceDifficulty)
+    PlaceDifficulty()
+
+    for _, text in ipairs({ difficulty.Default.Text, difficulty.Guild.Instance.Text }) do
+        local font, size = text:GetFont()
+        text:SetFont(font, size, "OUTLINE")
+    end
+    function BBF.UpdateClassicMinimapDifficulty()
+        local r, g, b = 0.588, 0.588, 0.6
+        if BBF.MinimapBronzeTintActive and BBF.MinimapBronzeTintActive() then
+            r, g, b = 0.573, 0.435, 0.216
+        end
+        for _, mode in ipairs({ difficulty.Default, difficulty.ChallengeMode }) do
+            mode.Border:SetDesaturated(true)
+            mode.Border:SetVertexColor(r, g, b, 1)
+            mode.Background:SetVertexColor(0, 0, 0, 0.5)
+        end
+    end
+    hooksecurefunc(difficulty, "SetFlipped", BBF.UpdateClassicMinimapDifficulty)
+    BBF.UpdateClassicMinimapDifficulty()
 
     local function TintCycleBorder(frame)
         for _, region in ipairs({ frame:GetRegions() }) do

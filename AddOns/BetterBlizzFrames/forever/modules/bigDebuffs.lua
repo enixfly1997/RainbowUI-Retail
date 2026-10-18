@@ -136,6 +136,8 @@ local function CreateHost(unit, unitFrame, portrait, portraitMask)
 
     local portraitParent = portrait:GetParent()
     local strata = STRATA_BELOW[portraitParent:GetFrameStrata()] or "BACKGROUND"
+    local point, relTo, relPoint, x, y = portrait:GetPoint()
+    if not point then return end
 
     local portraitLayer = CreateFrame("Frame", nil, portraitParent)
     portraitLayer:SetAllPoints(portraitParent)
@@ -143,9 +145,12 @@ local function CreateHost(unit, unitFrame, portrait, portraitMask)
     portraitLayer:SetFrameLevel(0)
 
     portrait:SetParent(portraitLayer)
+    portrait:ClearAllPoints()
+    portrait:SetPoint(point, relTo or portraitLayer, relPoint or point, x or 0, y or 0)
 
     local anchor = CreateFrame("Frame", nil, portraitLayer, BBF.AURA_ANCHOR_TEMPLATE)
-    anchor:SetAllPoints(portrait)
+    anchor:SetPoint(point, relTo or portraitLayer, relPoint or point, x or 0, y or 0)
+    anchor:SetSize(portrait:GetSize())
     anchor:SetFrameStrata(strata)
     anchor:SetFrameLevel(0)
 

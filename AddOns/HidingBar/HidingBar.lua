@@ -723,7 +723,7 @@ function hb:init()
 	end
 
 	if self.pConfig.grabDefMinimap then
-		xpcall(self.grabDefButtons, CallErrorHandler, self)
+		self:grabDefButtons()
 	end
 
 	hooksecurefunc(UIParent, "SetScale", function() self:UI_SCALE_CHANGED() end)
@@ -749,7 +749,7 @@ function hb:addButtons()
 	end
 
 	if self.pConfig.grabDefMinimap then
-		xpcall(self.grabDefButtons, CallErrorHandler, self)
+		self:grabDefButtons()
 	end
 
 	for i = 1, #self.pConfig.customGrabList do

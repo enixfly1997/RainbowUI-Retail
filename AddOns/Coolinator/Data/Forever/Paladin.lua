@@ -1,9 +1,5 @@
 local addonTable = select(2, ...)
-local class = "PALADIN"
-if UnitClassBase("player") ~= class then
-    return
-end
-addonTable.Data.Spells[class] = {
+addonTable.Data.Spells.PALADIN =  {
   [1] = {
     ['spells'] = {
       [1] = 19740,
@@ -38,7 +34,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = false
   },
   [4] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 21082,
       [2] = 20162,
@@ -51,7 +46,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = true
   },
   [5] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 1022,
       [2] = 5599,
@@ -74,7 +68,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = true
   },
   [7] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 498,
       [2] = 5573
@@ -93,7 +86,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = true
   },
   [9] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 1311649,
       [2] = 1311656,
@@ -137,7 +129,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = false
   },
   [13] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 21084,
       [2] = 20287,
@@ -160,6 +151,13 @@ addonTable.Data.Spells[class] = {
   },
   [15] = {
     ['spells'] = {
+      [1] = 3127
+    },
+    ['name'] = 'Parry',
+    ['isRanked'] = false
+  },
+  [16] = {
+    ['spells'] = {
       [1] = 19742,
       [2] = 19850,
       [3] = 19852,
@@ -169,8 +167,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Blessing of Wisdom',
     ['isRanked'] = true
   },
-  [16] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [17] = {
     ['spells'] = {
       [1] = 7294,
       [2] = 10298,
@@ -181,29 +178,28 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Retribution Aura',
     ['isRanked'] = true
   },
-  [17] = {
+  [18] = {
     ['spells'] = {
       [1] = 25780
     },
     ['name'] = 'Righteous Fury',
     ['isRanked'] = false
   },
-  [18] = {
+  [19] = {
     ['spells'] = {
       [1] = 1044
     },
     ['name'] = 'Blessing of Freedom',
     ['isRanked'] = false
   },
-  [19] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [20] = {
     ['spells'] = {
       [1] = 20217
     },
     ['name'] = 'Blessing of Kings',
     ['isRanked'] = false
   },
-  [20] = {
+  [21] = {
     ['spells'] = {
       [1] = 26573,
       [2] = 20116,
@@ -214,7 +210,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Consecration',
     ['isRanked'] = true
   },
-  [21] = {
+  [22] = {
     ['spells'] = {
       [1] = 879,
       [2] = 5614,
@@ -226,7 +222,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Exorcism',
     ['isRanked'] = true
   },
-  [22] = {
+  [23] = {
     ['spells'] = {
       [1] = 19750,
       [2] = 19939,
@@ -238,22 +234,21 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Flash of Light',
     ['isRanked'] = true
   },
-  [23] = {
+  [24] = {
     ['spells'] = {
       [1] = 19746
     },
     ['name'] = 'Concentration Aura',
     ['isRanked'] = false
   },
-  [24] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [25] = {
     ['spells'] = {
       [1] = 20164
     },
     ['name'] = 'Seal of Justice',
     ['isRanked'] = false
   },
-  [25] = {
+  [26] = {
     ['spells'] = {
       [1] = 7328,
       [2] = 10322,
@@ -264,7 +259,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Redemption',
     ['isRanked'] = true
   },
-  [26] = {
+  [27] = {
     ['spells'] = {
       [1] = 2878,
       [2] = 5627,
@@ -273,16 +268,14 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Turn Undead',
     ['isRanked'] = true
   },
-  [27] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [28] = {
     ['spells'] = {
       [1] = 1038
     },
-    ['name'] = 'Salvation',
+    ['name'] = 'Blessing of Salvation',
     ['isRanked'] = false
   },
-  [28] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [29] = {
     ['spells'] = {
       [1] = 19876,
       [2] = 19895,
@@ -291,15 +284,14 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Shadow Resistance Aura',
     ['isRanked'] = true
   },
-  [29] = {
+  [30] = {
     ['spells'] = {
       [1] = 19752
     },
     ['name'] = 'Divine Intervention',
     ['isRanked'] = false
   },
-  [30] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [31] = {
     ['spells'] = {
       [1] = 20375,
       [2] = 20915,
@@ -310,8 +302,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Seal of Command',
     ['isRanked'] = true
   },
-  [31] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [32] = {
     ['spells'] = {
       [1] = 20165,
       [2] = 20347,
@@ -321,8 +312,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Seal of Light',
     ['isRanked'] = true
   },
-  [32] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [33] = {
     ['spells'] = {
       [1] = 19888,
       [2] = 19897,
@@ -331,8 +321,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Frost Resistance Aura',
     ['isRanked'] = true
   },
-  [33] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [34] = {
     ['spells'] = {
       [1] = 642,
       [2] = 1020
@@ -340,8 +329,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Divine Shield',
     ['isRanked'] = true
   },
-  [34] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [35] = {
     ['spells'] = {
       [1] = 19891,
       [2] = 19899,
@@ -350,8 +338,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Fire Resistance Aura',
     ['isRanked'] = true
   },
-  [35] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [36] = {
     ['spells'] = {
       [1] = 20166,
       [2] = 20356,
@@ -360,8 +347,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Seal of Wisdom',
     ['isRanked'] = true
   },
-  [36] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [37] = {
     ['spells'] = {
       [1] = 19977,
       [2] = 19978,
@@ -370,7 +356,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Blessing of Light',
     ['isRanked'] = true
   },
-  [37] = {
+  [38] = {
     ['spells'] = {
       [1] = 1311606,
       [2] = 20473,
@@ -380,21 +366,21 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Holy Shock',
     ['isRanked'] = true
   },
-  [38] = {
+  [39] = {
     ['spells'] = {
       [1] = 750
     },
     ['name'] = 'Plate Mail',
     ['isRanked'] = false
   },
-  [39] = {
+  [40] = {
     ['spells'] = {
       [1] = 4987
     },
     ['name'] = 'Cleanse',
     ['isRanked'] = false
   },
-  [40] = {
+  [41] = {
     ['spells'] = {
       [1] = 24275,
       [2] = 24274,
@@ -403,8 +389,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Hammer of Wrath',
     ['isRanked'] = true
   },
-  [41] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [42] = {
     ['spells'] = {
       [1] = 6940,
       [2] = 20729
@@ -412,8 +397,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Blessing of Sacrifice',
     ['isRanked'] = true
   },
-  [42] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [43] = {
     ['spells'] = {
       [1] = 20925,
       [2] = 20927,
@@ -422,7 +406,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Holy Shield',
     ['isRanked'] = true
   },
-  [43] = {
+  [44] = {
     ['spells'] = {
       [1] = 2812,
       [2] = 10318
@@ -430,7 +414,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Holy Wrath',
     ['isRanked'] = true
   },
-  [44] = {
+  [45] = {
     ['spells'] = {
       [1] = 1310911,
       [2] = 1311590,
@@ -439,8 +423,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Light\'s Vigil',
     ['isRanked'] = true
   },
-  [45] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [46] = {
     ['spells'] = {
       [1] = 25782,
       [2] = 25916
@@ -448,8 +431,7 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Greater Blessing of Might',
     ['isRanked'] = true
   },
-  [46] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [47] = {
     ['spells'] = {
       [1] = 25894,
       [2] = 25918
@@ -457,306 +439,60 @@ addonTable.Data.Spells[class] = {
     ['name'] = 'Greater Blessing of Wisdom',
     ['isRanked'] = true
   },
-  [47] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [48] = {
     ['spells'] = {
       [1] = 25898
     },
     ['name'] = 'Greater Blessing of Kings',
     ['isRanked'] = false
   },
-  [48] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [49] = {
     ['spells'] = {
       [1] = 25890
     },
     ['name'] = 'Greater Blessing of Light',
-    ['isRanked'] = false
+    ['isRanked'] = true
   },
-  [49] = {
-    ['auraTag'] = 'ABILITYANDAURA',
+  [50] = {
     ['spells'] = {
       [1] = 25895
     },
-    ['name'] = 'Mass Salvation',
+    ['name'] = 'Greater Blessing of Salvation',
     ['isRanked'] = false
   },
-  [50] = {
+  [51] = {
     ['spells'] = {
       [1] = 20216
     },
     ['name'] = 'Divine Favor',
     ['isRanked'] = false
   },
-  [51] = {
+  [52] = {
     ['spells'] = {
       [1] = 1310897
     },
     ['name'] = 'Voice of Truth',
     ['isRanked'] = false
   },
-  [52] = {
+  [53] = {
     ['spells'] = {
       [1] = 1311015
     },
     ['name'] = 'Templar\'s Bulwark',
     ['isRanked'] = false
   },
-  [53] = {
+  [54] = {
     ['spells'] = {
       [1] = 20066
     },
     ['name'] = 'Repentance',
     ['isRanked'] = false
   },
-  [54] = {
+  [55] = {
     ['spells'] = {
       [1] = 1310994
     },
     ['name'] = 'Swift Judgement',
     ['isRanked'] = false
-  },
-  [55] = {
-    ['auraTag'] = false,
-    ['spells'] = {
-      [1] = 1311701
-    },
-    ['name'] = 'Echo of Fury',
-    ['isRanked'] = false
-  },
-  [56] = {
-    ['auraTag'] = false,
-    ['spells'] = {
-      [1] = 1311703
-    },
-    ['name'] = 'Echo of Command',
-    ['isRanked'] = false
-  },
-  [57] = {
-    ['auraTag'] = false,
-    ['spells'] = {
-      [1] = 1311704
-    },
-    ['name'] = 'Echo of Righteousness',
-    ['isRanked'] = false
-  },
-  [58] = {
-    ['auraTag'] = false,
-    ['spells'] = {
-      [1] = 1311705
-    },
-    ['name'] = 'Echo of Justice',
-    ['isRanked'] = false
-  },
-  [59] = {
-    ['auraTag'] = 'HARMAURA',
-    ['spells'] = {
-      [1] = 440667
-    },
-    ['name'] = 'Vindication',
-    ['isRanked'] = false
-  },
-  [60] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 440668
-    },
-    ['name'] = 'Vindication',
-    ['isRanked'] = false
-  },
-  [61] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 20050
-    },
-    ['name'] = 'Vengeance',
-    ['isRanked'] = false
-  },
-  [62] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1324538
-    },
-    ['name'] = 'Repentance',
-    ['isRanked'] = false
-  },
-  [63] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 20127,
-      [0] = 20128
-    },
-    ['name'] = 'Redoubt',
-    ['isRanked'] = false
-  },
-  [64] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 20177,
-      [0] = 20178
-    },
-    ['name'] = 'Reckoning',
-    ['isRanked'] = false
-  },
-  [65] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 437063
-    },
-    ['name'] = 'Infusion of Light',
-    ['isRanked'] = false
-  },
-  [66] = {
-    ['auraTag'] = 'HARMAURA',
-    ['spells'] = {
-      [1] = 1310910,
-      [2] = 1311594,
-      [3] = 1311599
-    },
-    ['name'] = 'Light\'s Vigil',
-    ['isRanked'] = true
-  },
-  [67] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1310909,
-      [2] = 1311593,
-      [3] = 1311597
-    },
-    ['name'] = 'Light\'s Vigil',
-    ['isRanked'] = true
-  },
-  [68] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1324513,
-      [0] = 1324515
-    },
-    ['name'] = 'Hammer of Justice',
-    ['isRanked'] = false
-  },
-  [69] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1324543,
-      [0] = 1324545
-    },
-    ['name'] = 'Turn Undead',
-    ['isRanked'] = false
-  },
-  [70] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1311703
-    },
-    ['name'] = 'Echo of Command',
-    ['isRanked'] = false
-  },
-  [71] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1311704
-    },
-    ['name'] = 'Echo of Righteousness',
-    ['isRanked'] = false
-  },
-  [72] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1311705
-    },
-    ['name'] = 'Echo of Justice',
-    ['isRanked'] = false
-  },
-  [73] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1311701
-    },
-    ['name'] = 'Echo of Fury',
-    ['isRanked'] = false
-  },
-  [74] = {
-    ['auraTag'] = 'HARMAURA',
-    ['spells'] = {
-      [1] = 21183,
-      [2] = 20188,
-      [3] = 20300,
-      [4] = 20301,
-      [5] = 20302,
-      [6] = 20303
-    },
-    ['name'] = 'Judgement of the Crusader',
-    ['isRanked'] = true
-  },
-  [75] = {
-    ['auraTag'] = 'HARMAURA',
-    ['spells'] = {
-      [1] = 20184
-    },
-    ['name'] = 'Judgement of Justice',
-    ['isRanked'] = true
-  },
-  [76] = {
-    ['auraTag'] = 'HARMAURA',
-    ['spells'] = {
-      [1] = 20185,
-      [2] = 20344,
-      [3] = 20345,
-      [4] = 20346
-    },
-    ['name'] = 'Judgement of Light',
-    ['isRanked'] = true
-  },
-  [77] = {
-    ['auraTag'] = 'HARMAURA',
-    ['spells'] = {
-      [1] = 20186,
-      [2] = 20354,
-      [3] = 20355
-    },
-    ['name'] = 'Judgement of Wisdom',
-    ['isRanked'] = true
-  },
-  [78] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 465,
-      [2] = 10290,
-      [3] = 643,
-      [4] = 10291,
-      [5] = 1032,
-      [6] = 10292,
-      [7] = 10293
-    },
-    ['name'] = 'Devotion Aura',
-    ['isRanked'] = true
-  },
-  [79] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 19740,
-      [2] = 19834,
-      [3] = 19835,
-      [4] = 19836,
-      [5] = 19837,
-      [6] = 19838,
-      [7] = 25291
-    },
-    ['name'] = 'Blessing of Might',
-    ['isRanked'] = true
-  },
-  [80] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 19742,
-      [2] = 19850,
-      [3] = 19852,
-      [4] = 19853,
-      [5] = 19854,
-      [6] = 25290
-    },
-    ['name'] = 'Blessing of Wisdom',
-    ['isRanked'] = true
   }
 }

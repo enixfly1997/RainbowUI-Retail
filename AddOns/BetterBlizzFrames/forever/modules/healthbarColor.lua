@@ -593,7 +593,7 @@ BBF.GetDefaultPowerColor = GetDefaultPowerColor
 local function SetupAlternateBarHook(bar, defaultColor)
     if not bar or bar.bbfTextureColorHook then return end
 
-    local applyTexture = BBF.UnitFrameTextureOn("mana")
+    local applyTexture = BetterBlizzFramesDB.changeUnitFrameManabarTexture
     local keepFancy = BetterBlizzFramesDB.changeUnitFrameManaBarTextureKeepFancy
     local fancyManas = BBF.fancyManas
     local manaTexture = BBF.manaTexture
@@ -717,7 +717,7 @@ local function HookPowerBarColors()
         BBF.powerColorsRaidFramesHooked = true
     end
 
-    if customColorsUnitFrames and not BBF.altBarsTextureColorHooked and not BBF.UnitFrameTextureOn("mana") then
+    if customColorsUnitFrames and not BBF.altBarsTextureColorHooked and not BetterBlizzFramesDB.changeUnitFrameManabarTexture then
         local class = UnitClassBase("player")
 
         local defaultColors = {
@@ -749,7 +749,7 @@ end
 
 function BBF.UpdateFrames()
     classColorsOn = BetterBlizzFramesDB.classColorFrames
-    retexturedBars = BBF.UnitFrameTextureOn("health")
+    retexturedBars = BetterBlizzFramesDB.changeUnitFrameHealthbarTexture
     colorPetAfterOwner = BetterBlizzFramesDB.colorPetAfterOwner
     skipPlayer = BetterBlizzFramesDB.classColorFramesSkipPlayer
     skipFriendly = BetterBlizzFramesDB.classColorFramesSkipFriendly
@@ -1212,7 +1212,7 @@ function BBF.HookHealthbarColors()
 
         healthbarsHooked = true
     elseif not healthbarsHooked and ((rpNamesHealthbarColor and TRP3_API) or customHealthbarColors) then
-        retexturedBars = BBF.UnitFrameTextureOn("health")
+        retexturedBars = BetterBlizzFramesDB.changeUnitFrameHealthbarTexture
 
         local function UpdateHealthColorUnified(frame)
             if not frame or not frame.unit or frame.unit:find("nameplate") or frame:IsForbidden() then return end
@@ -1335,11 +1335,11 @@ function BBF.PlayerReputationColor()
                     frame.ReputationColor:SetTexture(nameBgTexture)
                     frame.ReputationColor:SetTexCoord(0, 1, 0, 1)
                 else
-                    if not BBF.UnitFrameTextureOn("health") then
+                    if not BetterBlizzFramesDB.changeUnitFrameHealthbarTexture then
                         frame.ReputationColor:SetTexture(137017)
                         frame.ReputationColor:SetTexCoord(1, 0, 0, 1)
                     else
-                        local texture = BBF.LSM:Fetch(BBF.LSM.MediaType.STATUSBAR, BBF.UnitFrameTextureName("health"))
+                        local texture = BBF.LSM:Fetch(BBF.LSM.MediaType.STATUSBAR, BetterBlizzFramesDB.unitFrameHealthbarTexture)
                         frame.ReputationColor:SetTexture(texture)
                         frame.ReputationColor:SetTexCoord(0, 1, 0, 1)
                     end

@@ -94,7 +94,7 @@ function addonTable.Core.GetCDMMappingAbilities()
 end
 
 function addonTable.Core.GetCDMOrderAurasOnly(layout)
-  return {auraMap = addonTable.Core.GetCDMMappingAuras()}
+  return {auraMap = addonTable.Core.GetCDMMappingAuras(), abilityMap = addonTable.Constants.IsForever and addonTable.Core.GetCDMMappingAbilities()}
 end
 
 function addonTable.Core.GetExistingLayoutName()

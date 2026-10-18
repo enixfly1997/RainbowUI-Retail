@@ -1,9 +1,5 @@
 local addonTable = select(2, ...)
-local class = "ROGUE"
-if UnitClassBase("player") ~= class then
-    return
-end
-addonTable.Data.Spells[class] = {
+addonTable.Data.Spells.ROGUE = {
   [1] = {
     ['spells'] = {
       [1] = 1752,
@@ -27,13 +23,13 @@ addonTable.Data.Spells[class] = {
       [5] = 8623,
       [6] = 8624,
       [7] = 11299,
-      [8] = 11300
+      [8] = 11300,
+      [9] = 31016,
     },
     ['name'] = 'Eviscerate',
     ['isRanked'] = true
   },
   [3] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 1784,
       [2] = 1785,
@@ -99,7 +95,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = true
   },
   [10] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 5171,
       [2] = 6774
@@ -108,7 +103,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = true
   },
   [11] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 2983,
       [2] = 8696,
@@ -135,7 +129,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = false
   },
   [14] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 8647,
       [2] = 8649,
@@ -147,7 +140,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = true
   },
   [15] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 703,
       [2] = 8631,
@@ -160,13 +152,11 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = true
   },
   [16] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 1966,
       [2] = 6768,
       [3] = 8637,
-      [4] = 11303,
-      [5] = 25302
+      [4] = 11303
     },
     ['name'] = 'Feint',
     ['isRanked'] = true
@@ -199,7 +189,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = true
   },
   [20] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 1943,
       [2] = 8639,
@@ -342,7 +331,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = false
   },
   [37] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 13750
     },
@@ -357,7 +345,6 @@ addonTable.Data.Spells[class] = {
     ['isRanked'] = false
   },
   [39] = {
-    ['auraTag'] = 'ABILITYANDAURA',
     ['spells'] = {
       [1] = 14251
     },
@@ -390,74 +377,6 @@ addonTable.Data.Spells[class] = {
       [1] = 14278
     },
     ['name'] = 'Ghostly Strike',
-    ['isRanked'] = false
-  },
-  [44] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1324485
-    },
-    ['name'] = 'Silenced - Kick',
-    ['isRanked'] = false
-  },
-  [45] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1324477
-    },
-    ['name'] = 'Blind',
-    ['isRanked'] = false
-  },
-  [46] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 14143
-    },
-    ['name'] = 'Remorseless',
-    ['isRanked'] = false
-  },
-  [47] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 14144
-    },
-    ['name'] = 'Remorseless Attacks',
-    ['isRanked'] = false
-  },
-  [48] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1324481
-    },
-    ['name'] = 'Gouge',
-    ['isRanked'] = false
-  },
-  [49] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 11327,
-      [2] = 1857
-    },
-    ['name'] = 'Vanish',
-    ['isRanked'] = true
-  },
-  [50] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1324482,
-      [2] = 1324483,
-      [3] = 1324484
-    },
-    ['name'] = 'Sap',
-    ['isRanked'] = false
-  },
-  [51] = {
-    ['auraTag'] = 'HELPAURA',
-    ['spells'] = {
-      [1] = 1324474,
-      [2] = 1324475
-    },
-    ['name'] = 'Kidney Shot',
     ['isRanked'] = false
   }
 }

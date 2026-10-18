@@ -110,7 +110,7 @@ local refreshFunc = function(self, data, offset, totalLines)
 
             local name = thisData.name
             if (Details.remove_realm_from_name) then
-                name = Details:RemoveRealmName(name, thisData.sourceGUID)
+                name = Details:RemoveRealmName(name)
             end
 
             line.Texts[2]:SetText(name)

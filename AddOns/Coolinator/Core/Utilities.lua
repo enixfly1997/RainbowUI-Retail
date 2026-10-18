@@ -135,7 +135,10 @@ else
   end
   function addonTable.Utilities.IsAbilitySpellKnown(spellID, rank)
     local spells
-    if rankMap[spellID] then
+    if addonTable.State.CDM.abilityMap[spellID] then
+      local cooldownInfo = C_CooldownViewer.GetCooldownViewerCooldownInfo(addonTable.State.CDM.abilityMap[spellID])
+      spells = cooldownInfo.linkedSpellIDs
+    elseif rankMap[spellID] then
       local index = rankMap[spellID]
       spells = rankData[index].spells
     else
@@ -152,13 +155,11 @@ else
   end
 
   function addonTable.Utilities.GetAltAuras(spellID)
-    if rankMap[spellID] then
-      return rankData[rankMap[spellID]].spells
-    end
-
     local fromCDM = AurasFromCDM(spellID)
     if fromCDM then
       return fromCDM
+    elseif rankMap[spellID] then
+      return rankData[rankMap[spellID]].spells
     end
   end
 end

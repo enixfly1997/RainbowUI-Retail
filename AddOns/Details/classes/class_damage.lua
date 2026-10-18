@@ -3211,7 +3211,7 @@ function Details:UpdateBarApocalypseWow(instanceLine, source, instance, topValue
 	end
 
 	if (Details.remove_realm_from_name) then
-		actorName = Details:RemoveRealmName(source.name, source.sourceGUID)
+		actorName = Details:RemoveRealmName(source.name)
 	end
 
 	if (instance.row_info.textL_show_number) then
